@@ -1,0 +1,103 @@
+Fisrt of all, I would like to say that I don't think I understand the lecture very well and this notes is therefore not ``well-done''. So it would be great if you want to improve it (this is the only reason why I \LaTeX{} it). I put the \TeX{} source code on \texttt{GitHub} so that you can modify and elaborate them:
+
+Furthermore, thanks to Prof. Weber's pictures, as well as Mathematica package and documentation.\\
+\par
+
+
+We are going to study the Riemann surfaces associated to the following algebraic functions:
+\begin{itemize}
+    \item Fermat : $y^4=x^4-1$
+    \item Klein:\ \  \ \  $y^7=x(x-1)^2(x-2)^4$
+    \item ?:\ \ \   \quad \quad   $y^3=x^6-1$
+\end{itemize}
+
+At first, we consider the Klein's Riemann surface $X$
+$$Y^7=x(x-1)^2(x-2)^4$$
+
+It is easy to see there are three branched points: $0$, $1$, and $2$. Near them, the map $X\rightarrow \PP^{1}$ should respectively looks like 
+
+\[\begin{aligned}
+    Y & \mapsto \zeta = e^{\frac{2\pi i}{7}}\\
+    Y & \mapsto \zeta^{2} = e^{2\frac{2\pi i}{7}}\\
+    Y & \mapsto \zeta^{4} = e^{4\frac{2\pi i}{7}}
+\end{aligned}\]
+
+Since $7$ is a prime number, which is nice, the map is therefore of branched index $6$ at each branched point. Applying Riemann-Hurwitz formula, the genus of Klein's Riemann surface should be 
+\[\begin{aligned}
+g^{\mathrm{Klein}}&=7(0-1)+1+\frac{1}{2}(6+6+6)\\
+&=-6+9\\
+&=3
+\end{aligned}\]
+where the seven and the zero in the first row are degree of the holomorphic map and the genus of $\PP^1$ respectively. \par
+
+According to \cite{MR1722412}, the automorphism group of Klein's surface is 
+\[\Aut(\mathrm{Klein})=\left\{\frac{az+b}{cz+d}~~\bigg|\,\ \begin{pmatrix}a&b\\c&d\end{pmatrix}\in \mathrm{PSL}_2(\Z) \text{~~and ~~}\begin{pmatrix}a&b\\c&d\end{pmatrix}\equiv \begin{pmatrix}1&0\\0&1\end{pmatrix} \pmod{7}\right\}\]
+
+Also, the order of the above group is $24\cdot 7=168$. 
+\\ 
+\par
+
+
+To find the automorphism of the Klein's Riemann surface, we can start with drawing its hyperbolic picture. Consider the upper plane, using Riemann mapping theorem we can map $0$, $1$ and $2$ to three points on the unit circle (we obtain a zero triangle, i.e. every angle is $0$). Then, extend the mapping by reflection and do some necessary shrinking, we obtain a equilateral hyperbolic triangle with the angle $\frac{\pi}{7}$. After reflections, we can get the hyperbolic structure of Klein's Riemann surface (See the following figures. They are produced by Prof. Weber's Mathematica package).
+\newpage
+\begin{figure}[h!]
+\centering
+\includegraphics[width=6cm]{tess2.pdf}
+\includegraphics[width=6cm]{tess1.pdf}
+\caption{Tessallations}
+\end{figure}
+
+\par
+
+
+
+Alternatively, we can consider the Euclidean triangle with angles $\frac{\pi}{7}$, $\frac{2\pi}{7}$ and $\frac{4\pi}{7}$, based on the observation that sum all angles up and we get exactly $\pi$. Beginning with the Euclidean triangle, do reflections and some Jigsaw puzzle, we have the planar picture of Klein's surface, consisting of 14 pieces of the triangle.  
+
+Here is the advantage of dealing with the Euclidean triangle (See \cite{MR1722412}):
+\begin{quote}
+The certain quotients of Klein’s surface $X$ are rhombic toriand we would like to know more about them. While we don’t have any arguments using hyperbolic geometry to obtain this information, there is a surprisingly simple way using flat geometry. The idea is as follows: Suppose we have a holomorphic map from $X$ to some torus. Its exterior derivative will be a well defined holomorphic $1$-form on $X$ with the special property that all its periods lie in a lattice in $\C$. Vice versa, the integral of such a $1$-form will define a map to a torus whose lattice is spanned by the periods of the $1$-form. There are two
+problems with this method: 
+
+It is rarely the case that one can write down holomorphic 1-forms for a Riemann surface. An exception are the hyperelliptic surfaces in their normal form $y^2 = P(x)$ where one can multiply the meromorphic form $\rd x$ by rational functions in $x$ and $y$ to obtain a basis of holomorphic forms. But even if one can find holomorphic $1$-forms then it is most unlikely that one can integrate them to compute their periods.
+
+Flat geometry helps to overcome both problems simultaneously: Any holomorphic $1$-form $\omega$ determines a flat metric on the surface that is singular in the zeroes of $\omega$ and that has trivial linear holonomy (parallel translation around any closed curve is the identity). This flat metric can be given by taking $|\omega|$ as its line element. Another way to describe it is as follows: Integrate $\omega$ to obtain a locally defined map from the surface to $\C$. Use this map to pull back the metric from $\C$ to the surface. A neighborhood around a zero of order $k$ of $\omega$ is isometric to a euclidean cone with cone angle $2\pi(k + 1)$, as can be seen in a local coordinate.
+    
+\end{quote}
+
+By the above statement, if we do the Jigsaw puzzle to each vertex, then we have the vertex of $\frac{2\pi}{7}$ angle is a simple zero and the vertex of $\frac{4\pi}{7}$ angle is the zero of order $3$.
+
+Similar with the hyperbolic procedure, we have a map from the (``punctured'') upper half plane to the triangle, which is a Schwarz-Christoffel mapping, given by,
+\[f(z)=\int_{i}^{z} x^{\frac{1}{7}-1} (x-1)^{\frac{2}{7}-1} (x-2)^{\frac{4}{7}-1}\rd x\]
+Then the holomorphic $1$-form on $X$ will be 
+\[\begin{aligned}
+\omega_1 &= x^{\frac{1}{7}-1} (x-1)^{\frac{2}{7}-1} (x-2)^{\frac{4}{7}-1}\rd x = \frac{Y}{x(x-1)(x-2)}\rd x \\
+\omega_2 &= x^{\frac{2}{7}-1} (x-1)^{\frac{4}{7}-1} (x-2)^{\frac{1}{7}-1}\rd x \\
+\omega_3 &= x^{\frac{4}{7}-1} (x-1)^{\frac{1}{7}-1} (x-2)^{\frac{2}{7}-1}\rd x \end{aligned}\]
+
+Using Mathematica, we can compute the Wronskian determinant so that we can get Weierstrass points. Then we have the following table:
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c|ccc}
+        &  0&1&2\\ \hline 
+       $\omega_1$  & 0&1 &3  \\
+       $\omega_2$  & 1&3 &$\star$\\
+       $\omega_3$  & 3&$\star$ &1
+    \end{tabular}
+\end{table}
+
+which consists of the weight of Weierstrass points. The gaps at $0$, $1$ and $2$ are $1$, $2$ and $4$ respectively. Also, by the formula $W=(g-1)g(g+1)$, we have $X$ has $24$ Weierstrass points. \\ 
+\par 
+Now, we are going to study the Riemann surface associated to 
+\[Y^{3}=x^6-1\]
+
+We start with a $6$ points punctured plane and connect the points (then get the slits) in the following way:
+\[\zeta_1 - \zeta_2 ,\quad \zeta_3 - \zeta_4,\quad \zeta_5 - 1 \]
+By Riemann mapping theorem, we can map the punctured plane to a hexagon and do reflections. Then we obtain
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=8cm]{hexa-annulus.pdf}
+\end{figure}
+
+Similarly, we have the genus of the Riemann surface is $4$ and we can calculate its Weierstrass points.
+
